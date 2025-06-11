@@ -1,0 +1,855 @@
+/*=============== FEATURES ===============*/
+.features{
+  overflow: hidden;
+  position: relative;
+}
+
+.features__container{
+  padding-top: 2rem;
+  grid-template-columns: 285px;
+  justify-content: center;
+}
+
+.features__group{
+  display: grid;
+  position: relative;
+  z-index: 10;
+}
+
+.features__img{
+  width: 150px;
+  justify-self: center;
+}
+
+.features__card{
+  width: 112px;
+  background-color: hsla(0, 0%, 100%, .1);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  padding: .75rem 2rem;
+  text-align: center;
+  color: var(--title-color);
+  position: absolute;
+}
+
+.features__card-1{
+  top: 4rem;
+  left: 1.5rem;
+}
+
+.features__card-2{
+  top: 8rem;
+  right: 1rem;
+}
+
+.features__card-3{
+  left: 1.5rem;
+  bottom: 2rem;
+}
+
+.features__card-title{
+  font-size: var(--h3-font-size);
+  margin-bottom: .25rem;
+}
+
+.features__card-description{
+  font-size: var(--smaller-font-size);
+}
+
+.features__map{
+  max-width: initial;
+  width: 450px;
+  position: absolute;
+  top: 8rem;
+  left: -3rem;
+  margin: auto;
+  transform: rotate(-22deg);
+}
+
+/*=============== FEATURED ===============*/
+.featured__container{
+  padding-top: 1rem;
+}
+
+.featured__filters{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.featured__item{
+  width: fit-content;
+  height: auto;
+  border: none;
+  outline: none;
+  padding: .75rem;
+  border-radius: .75rem;
+  color: var(--first-color);
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.featured__item img{
+  width: 1.5rem;
+}
+
+.featured__item span,
+.featured__item img{
+  opacity: .3;
+  transition: .3s;
+}
+
+.featured__item:hover{
+  background-color: var(--first-color);
+  color: white
+}
+
+.featured__item:hover span,
+.featured__item:hover img{
+  opacity: 1;
+}
+
+.featured__content{
+  grid-template-columns: 228px;
+  flex-wrap: wrap;
+  row-gap: 2.5rem;
+  justify-content: space-between;
+}
+
+.featured__card{
+  position: relative;
+  padding: 2rem .5rem 1.5rem;
+  transition: all 0.4s ease;
+  transform-origin: center center;
+  will-change: opacity, transform;
+}
+
+.featured__card .shape__smaller{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.featured__title,
+.featured__subtitle,
+.featured__img{
+  position: relative;
+}
+
+.featured__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: .25rem;
+  text-align: center;
+  color: var(--first-color);
+  letter-spacing: 0.01rem;
+}
+
+.featured__subtitle{
+  font-size: var(--normal-font-size);
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.featured__img{
+  width: 180px;
+  margin: 1.5rem 0;
+  transition: .3s;
+}
+
+.featured__price{
+  font-size: var(--h3-font-size);
+}
+
+.featured__button{
+  border: none;
+  outline: none;
+  padding: .75rem 1rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 1rem 0 1rem 0;
+  cursor: pointer;
+}
+
+.featured__button i{
+  font-size: 1.25rem;
+}
+
+.featured__card:hover .featured__img{
+  transform: translateX(-.25rem);
+}
+
+.featured__container :is(.swiper, .swiper-wrapper) {
+  padding: 0 0 2rem;
+}
+
+.featured__container .swiper-slide {
+  height: auto;
+}
+
+.featured__content{
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  gap: 1rem;
+  padding-inline: 2rem;
+}
+.grid-entry {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.entry-card {
+  position: relative;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.entry-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.entry-icon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 5rem;
+  color: rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  transition: transform 0.3s ease, opacity 0.3s;
+}
+
+.entry-card:hover .entry-title {
+  transform: translateY(-5px);
+  color: #1e90ff;
+}
+
+.entry-card:hover .entry-icon {
+  transform: scale(1.2);
+  opacity: 0.03;
+}
+.grid-entry {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.entry-card {
+  position: relative;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+}
+
+.entry-title {
+  font-size: var(--h2-font-size);
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+  transition: letter-spacing 1s, color 1s;
+  letter-spacing: 0;
+}
+.entry-card::before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  visibility: hidden;  
+  transition: top 1.5s, transform 1.5s, left 1.5s, width 1.5s, height 1.5s, opacity 1.5s;
+  transform: rotate(90deg);
+  opacity: 0;
+}
+.entry-card:nth-child(1)::before{background: url("../img/kyoto_buttons_cleaned_3.png") center center / cover no-repeat;}
+.entry-card:nth-child(2)::before{background: url("../img/kyoto_buttons_cleaned_5.png") center / cover no-repeat;}
+.entry-card:nth-child(3)::before{background: url("../img/kyoto_buttons_cleaned_10.png") center / cover no-repeat;}
+.entry-card:nth-child(4)::before{background: url("../img/kyoto_buttons_cleaned_12.png") center / cover no-repeat;}
+.entry-card:hover::before{
+  transform: rotate(120deg);top: -60%;left: -15%;width: 80%;height: 80%;visibility: visible;opacity: 1;
+}
+.entry-card:hover .entry-title {
+  letter-spacing: 0.25rem;
+  color: var(--first-color);
+  font-weight: 600;
+}
+
+.entry-card:hover {
+  background: linear-gradient(to top, #ffd6d3, #afe3f1);
+}
+.entry-card:hover .entry-icon {
+  transform: scale(1.2);
+  opacity: 0.03;
+}
+.grid-entry {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.entry-card {
+  position: relative;
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #ffd6d3, #afe3f1);
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;z-index: 1;
+}
+.entry-card::before{
+  position: absolute;content: '';
+  top: 0;left: 0;width: 100%;height: 100%;z-index: 0;  
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+.iframe-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+/* portfolio group2 Iframe */
+.iframe-overlay.show {
+  display: flex;
+}
+
+.iframe-wrapper {
+  width: 90vw;
+  max-width: 1600px;
+  height: 80vh;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: slideInUp 0.6s ease forwards;
+  background: url('../img/portfolio_button_idea.png') center cover no-repeat;
+  padding: 1rem;
+}
+
+.iframe-tabs {
+  display: flex;
+  background: linear-gradient(to bottom, #ffd6d3, #afe3f1);
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+  justify-content: space-around;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.iframe-tab, .iframe-close {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+  padding: 0.5rem 1rem;
+}
+.iframe-tab {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  border-radius: 8px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.iframe-tab:hover {
+  background: #ffb3b3;
+  color: white;
+  transform: translateY(-2px);
+}
+.iframe-close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  color: #aaa;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.iframe-tab.active {
+  background-color: var(--first-color);
+  color: white;
+  border-radius: 5px;
+}
+
+.iframe-content {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Active link featured */
+.active-featured{
+  background-color: var(--first-color);color: var(--white-color)
+}
+
+.active-featured span,
+.active-featured img{
+  opacity: 1;
+}
+
+/*=============== SIDE PANEL ===============*/
+/* ===== Overlay 基本樣式 ===== */
+/* 給 About 用的遮罩 */
+.about-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  z-index: 1002;
+}
+
+.about-overlay.show {
+  display: block;
+}
+
+/* 給 SidePanel 用的遮罩 */
+.side-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  z-index: 1001;
+}
+
+.side-overlay.show {
+  display: block;
+}
+
+/* ===== 中央 Modal 彈窗 ===== */
+iframe.delayed-interaction {
+  pointer-events: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  width: 80vw; height: 40vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1003;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  width: 90vw;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  height: 600px;
+  padding: 1rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ===== About Modal ===== */
+body.modal-open {
+  overflow: hidden;        /* 禁止滾動 */
+  pointer-events: none;    /* 禁止點擊（整頁） */
+}
+
+body.modal-open #aboutModal,
+body.modal-open #aboutOverlay {
+  pointer-events: auto;    /* ✅ 讓 modal 自己可以互動 */
+}
+
+/* ===== 側邊滑出面板 ===== */
+.side-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 60%;
+  height: 100%;
+  background: #fff;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.2);
+  transition: right 0.4s ease;
+  z-index: 1004;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-panel.open {
+  right: 0;
+}
+
+.side-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  background: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.side-close {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 15px;
+  color: var(--first-color);
+}
+
+#sideIframe {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body.no-scroll * {
+  pointer-events: none;
+}
+
+#sidePanel,
+#sidePanel * {
+  pointer-events: auto;
+}
+#sideOverlay.show, #aboutOverlay.show, .iframe-overlay.show {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+/*=============== portfolio UI ===============*/
+/* Two-column layout if needed */
+.two-column-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+#content-display {
+  display: block;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  opacity: 0; /* 預設不顯示內容，直到插入為止 */
+  transition: opacity 0.4s ease;
+}
+
+/* 主圖樣式 */
+.ui-main-image {
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* 整張卡片樣式（初始完全隱藏） */
+.ui-card {
+  display: none; /* 一開始不顯示 */
+  overflow: hidden;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+/* 卡片內部的 header */
+.ui-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 標題字 */
+.ui-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 展開用的按鈕 */
+.ui-toggle-btn {
+  background-color: var(--fifth-color);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 詳細內容（若有需要額外展開控制） */
+.ui-details {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transform: scaleY(0.95);
+  transform-origin: top;
+  transition: all 0.4s ease-in-out;
+}
+.ui-details.active {
+  height: auto;
+  opacity: 1;
+  transform: scaleY(1);
+  overflow: visible;
+}
+.ui-details h2{
+  color: var(--first-color);
+}
+
+/* 導覽按鈕列 */
+.ui-nav-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+/* 每顆導覽按鈕 */
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: white;
+  border: none;
+  color: var(--first-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .3s ease-in-out;
+  position: relative;
+}
+
+/* 滑過按鈕時 */
+.nav-btn:hover, .nav-btn.active-btn  {
+  background-color: var(--first-color);
+  color: white;
+}
+.nav-btn.active-btn {
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.6);
+}
+
+/* 導覽按鈕縮圖 */
+.nav-thumb {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/*=============== THEME ===============*/
+.nav__buttons{
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+.change-theme{
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color .3s;
+}
+
+/* illustrator portfolio */
+.iframe-gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  right: 3rem;
+  bottom: -30%;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 12px hsl(207, 24%, 35%, .15);
+  display: inline-flex;
+  padding: 0.35rem;
+  border-radius: .25rem;
+  font-size: 1.1rem;
+  color: var(--title-color);
+  z-index: var(--z-tooltip);
+  opacity: 0;
+  transition: bottom .3s, transform .3s;
+  text-decoration: none;
+}
+
+.scrollup:hover{
+  transform: translateY(-.25rem);
+}
+
+/* Show Scroll Up*/
+.scrollup.show-scroll{
+  bottom: 7.5rem;
+  opacity: 1;
+}
+
+
+/* For medium devices */
+@media screen and (min-width:250px){
+  .features__map{
+    left: 0;
+    right: 0;
+  }
+  .featured__container{
+    grid-template-columns: repeat(2 , 228px);
+  }
+
+}
+
+
+/* For large devices */
+
+@media screen and (min-width:1350px){
+  .features__container{
+    width: 200px;
+  }
+  .features__card{
+    width: 127px;
+    padding: .75rem 2.5rem;
+  }
+  .features__card-1{
+    left: -1rem;
+  }
+  .features__card-2{
+    right: -2.5rem;
+  }
+  .features__card-3{
+    bottom: 1rem;
+    left: -1rem;
+  }
+  .features__map{
+    width: 650px;
+    top: 11rem;
+  }
+
+  .featured__container{
+    padding-bottom: 2.5rem;
+    margin-inline: auto;
+    overflow: hidden;
+    width: 1400px;
+  }
+  .featured__filters{
+    column-gap: 2rem;
+    margin-bottom: 4.5rem;
+  }
+  .featured__item img{
+    width: 2rem;
+  }
+  .featured__content{
+    gap:1rem;
+    padding-inline: 3rem;
+    margin: auto;
+  }  
+}
+
+@media (min-width: 769px) and (max-width:1349px){
+  .featured__content{
+    grid-template-columns: repeat(3 , 240px);
+    gap: .5rem;
+  }
+}
+
+@media screen and (max-width:768px){
+  .featured__content{
+    grid-template-columns: repeat(2 , 180px);
+    gap: .5rem;
+  }
+}
+
+@media screen and (max-width:360px){
+  .featured__content{
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .iframe-wrapper {
+    width: 95vw;
+    max-width: 95vw;
+    height: 85vh;
+    border-radius: 0.5rem;
+  }
+}
