@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Horizontal Scroll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles2.css">
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%; overflow-x: hidden;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: #f9f9f9;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+    .horizontal-section {
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+      cursor: grab;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+    .horizontal-section:active {
+      cursor: grabbing;
+    }
+
+    .horizontal-track {
+      display: flex;
+      height: 100%;
+      will-change: transform;
+      transition: transform 0.1s ease-out;
+    }
+
+    .panel {
+      min-width: 100vw;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      font-size: 2rem;
+      color: var(--first-color);
+      padding: 1rem 6rem;
+      box-sizing: border-box;
+      border-right: 1px solid #ccc;
+      overflow: hidden;
+    }
+    .panel__content {
+      width: 40%;
+    }
+    .panel__title {
+      font-size: 3.2rem;
+    }
+    .panel__content p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #333;
+    }    
+    .panel__date{
+      width: 100%;
+      font-size: 6.5rem;
+      color: #a0acb417;
+      font-weight: bold;
+    }
+    .panel small {
+      font-size: 1.4rem;
+      color: #666;
+      margin-top: 0.2em;
+      font-weight: 400;
+    }
+    .panel__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      height: 100%;
+    }
+    .panel img {
+      width: 300px;
+      max-width: 90vw;
+      margin-top: 20px;
+      object-fit: contain;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="horizontal-section">
+    <div class="horizontal-track" id="track">
+      <div class="panel panel__container">
+        <div class="panel__date">2001/8~2003/2</div>
+        <div class="panel__content">
+          <div class="panel__title">易學<br><small>flash動畫師</small></div>
+          <p>時任易學網頁設計師 與 flash動畫師,負責課程動畫製作，設計畫面介面，動畫互動輔助教具設計。配合後台機制互動串聯設計。</p>
+        </div>
+        <div class="panel__img"><img src="assets/img/featured1.png" alt="featured1"></div>
+      </div>
+      <div class="panel panel__container">
+        <div class="panel__date">2003/2~2005/2</div>
+        <div class="panel__content">
+          <div class="panel__title">太易<br><small>動畫師 + 網頁設計</small></div>
+          <p>多媒體部門專任互動光碟教學課程製作，相關鵝媽媽互動課程遊戲介面製作。</p>
+        </div>
+        <div class="panel__img"><img src="assets/img/featured2.png" alt="featured1"></div>
+      </div>
+      <div class="panel panel__container">
+        <div class="panel__date">2005/2~2006/5</div>
+        <div class="panel__content">
+          <div class="panel__title">階梯<br><small>網頁設計</small></div>
+          <p>互學網網站維護，活動企劃案設計製作，相關教程頁面維護。</p>
+        </div>
+        <div class="panel__img"><img src="assets/img/featured3.png" alt="featured1"></div>
+      </div>
+      <div class="panel panel__container">
+        <div class="panel__date">2006/5~2008/6</div>
+        <div class="panel__content">
+          <div class="panel__title">厚生<br><small>網頁設計</small></div>
+          <p>公司主體客戶衛生署網站維護以及署地下相關活動企劃案設計製作，也維護相關醫療產業網頁製作。</p>
+        </div>
+        <div class="panel__img"><img src="assets/img/featured4.png" alt="featured1"></div>
+      </div>
+      <div class="panel panel__container">
+        <div class="panel__date">2008/8~2025/8</div>
+        <div class="panel__content">
+          <div class="panel__title">高點<br><small>網頁設計</small></div>
+          <p>主要負責主體為自身補教相關網頁延伸設計，教程師資考前厚書籍歡喜慧活動頁面設計，相關微課課程宣導製作。</p>
+        </div>
+        <div class="panel__img"><img src="assets/img/featured4.png" alt="featured1"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (() => {
+    const track = document.getElementById('track');
+    const panels = track.children;
+    const panelCount = panels.length;
+
+    let panelWidth = window.innerWidth;
+    let currentX = 0;
+    let velocity = 3;
+    let isDragging = false;
+    let isPausedByHover = false;
+    let dragStartX = 0;
+    let dragCurrentX = 0;
+    let animationFrameId;
+
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function update() {
+      if (!isDragging && !isPausedByHover) {
+        currentX -= velocity;
+        if (currentX < -panelWidth * (panelCount - 1)) {
+          currentX = 0;
+        }
+        setTranslateX(currentX);
+      }
+      animationFrameId = requestAnimationFrame(update);
+    }
+
+    function setTranslateX(x) {
+      track.style.transform = `translateX(${x}px)`;
+    }
+
+    function onDragStart(e) {
+      isDragging = true;
+      cancelAnimationFrame(animationFrameId);
+      dragStartX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      dragCurrentX = currentX;
+    }
+
+    function onDragMove(e) {
+      if (!isDragging) return;
+      const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+      const deltaX = clientX - dragStartX;
+      currentX = clamp(dragCurrentX + deltaX, -panelWidth * (panelCount - 1), 0);
+      setTranslateX(currentX);
+    }
+
+    function onDragEnd() {
+      isDragging = false;
+      update();
+    }
+
+    // 🔥 滑鼠移入/移出 控制自動滑動暫停/繼續
+    const section = document.querySelector('.horizontal-section');
+    section.addEventListener('mouseenter', () => {
+      isPausedByHover = true;
+    });
+    section.addEventListener('mouseleave', () => {
+      isPausedByHover = false;
+    });
+
+    // 滑鼠事件
+    track.addEventListener('mousedown', onDragStart);
+    window.addEventListener('mousemove', onDragMove);
+    window.addEventListener('mouseup', onDragEnd);
+
+    // 觸控事件
+    track.addEventListener('touchstart', onDragStart);
+    window.addEventListener('touchmove', onDragMove);
+    window.addEventListener('touchend', onDragEnd);
+
+    // 初始化滑動
+    update();
+
+    // Resize
+    window.addEventListener('resize', () => {
+      panelWidth = window.innerWidth;
+      currentX = clamp(currentX, -panelWidth * (panelCount - 1), 0);
+      setTranslateX(currentX);
+    });
+  })();
+</script>
+
+</body>
+</html>
