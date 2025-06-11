@@ -1,0 +1,44 @@
+/*黑體*/
+@font-face {
+  font-family: 'cwTeXHei';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/cwTeXHei-zhonly.eot);
+  src: url(../fonts/cwTeXHei-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/cwTeXHei-zhonly.woff2) format('woff2'),
+       url(../fonts/cwTeXHei-zhonly.woff) format('woff'),
+       url(../fonts/cwTeXHei-zhonly.ttf) format('truetype');
+}
+/*仿宋*/
+@font-face {
+  font-family: 'cwTeXFangSong';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/cwTeXFangSong-zhonly.eot);
+  src: url(../fonts/cwTeXFangSong-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/cwTeXFangSong-zhonly.woff2) format('woff2'),
+       url(../fonts/cwTeXFangSong-zhonly.woff) format('woff'),
+       url(../fonts/cwTeXFangSong-zhonly.ttf) format('truetype');
+}
+/*明體*/
+@font-face {
+  font-family: 'cwTeXMing';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/cwTeXMing-zhonly.eot);
+  src: url(../fonts/cwTeXMing-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/cwTeXMing-zhonly.woff2) format('woff2'),
+       url(../fonts/cwTeXMing-zhonly.woff) format('woff'),
+       url(../fonts/cwTeXMing-zhonly.ttf) format('truetype');
+}
+/*楷體*/
+@font-face {
+  font-family: 'cwTeXKai';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/cwTeXKai-zhonly.eot);
+  src: url(../fonts/cwTeXKai-zhonly.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/cwTeXKai-zhonly.woff2) format('woff2'),
+       url(../fonts/cwTeXKai-zhonly.woff) format('woff'),
+       url(../fonts/cwTeXKai-zhonly.ttf) format('truetype');
+}

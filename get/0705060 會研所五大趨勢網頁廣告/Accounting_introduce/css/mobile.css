@@ -1,0 +1,111 @@
+@media all and (min-width: 1px) and (max-width: 1200px){
+/*隱藏的區塊*/
+#BodyHeader_event,.hottxt,#noie{display:none;}
+/*會撐開的版面控制*/
+#BodyContent {width: 100%;padding:0;}
+#BodyContainer_event{width: 100%;}
+/* Header */
+#BodyHeader_event_rwd {	text-align: center;width:100%;height: auto;	margin:0 auto;background-color:#FFF;position:fixed;top:0;float:left;z-index:9;}
+@media screen and  (orientation:portrait) {#BodyHeader_event_rwd img {max-width: 50%;margin-top:2.5%;}}
+@media screen and  (orientation:landscape) {#BodyHeader_event_rwd img {max-width: 25%;margin-top:2.5%;}}
+/*body*/
+#Master_title{display:inline-block;width:98%;padding:1%;}/*主圖位置ID*/
+
+@media all and (orientation : portrait){#Master_title{margin-top: 15%;}}
+@media screen and  (orientation:landscape) {#Master_title{margin-top: 10%;}}
+#media .mask {
+    width: 97%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 5% 1.5%;
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=1);
+    opacity: 1;
+    background-color: rgba(255,255,2550,0.8);
+}
+#media .stu {
+    width: 50%;
+    float: left;
+    display: inline;
+    position: relative;
+    text-align: center;
+    background-color: #FFF;
+}
+#media .stu img {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+#media .stu h2 {
+    font-size: 1.15em;
+    line-height: 1.5em;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+#media .stu p {
+    display: none;
+}
+/*滿百100%區域*/
+.row100{width:100%;}
+/*資料集中寬外框*/
+#event_master,#event_sec,#event_third,#event_fourth,#event_fifth,#event_sixth{margin:2% auto;display:inline-block;width:98%;padding:1%;}
+/*div section標籤段落*/
+section p,div p{font-size:1.3em;line-height:1.9em;text-align:left;}
+/*標題大小*/
+h1{ font-size: 2.2em; }
+h2{ font-size: 2.0em; }
+h3{ font-size: 1.6em; }
+#event_sixth nav a{ font-size: 1.2em; }
+
+/* Footer */
+#BodyFooter_rwd{float: left;width:100%;background-color:#FFF;margin-top:5%;}
+#BodyFooter_rwd #footer_line {width: 100%;margin-bottom: 3%;margin-top: 5%;display: block;float: left;height: auto;text-align: center;border-top-width: thin;	border-top-style: solid;border-top-color: #999;}
+#BodyFooter_rwd #footer_inline a {color: #000;line-height: 2em;}
+#BodyFooter_rwd #footer_inline ul{float: left;padding:0;width:100%;margin-bottom: 1%;text-align:center;}
+#BodyFooter_rwd #footer_inline ul li img{max-width:40%;height:auto;	margin-bottom: 2%;}
+#BodyFooter_rwd #footer_inline ul li{float: left;display: inline-block;	margin-right: auto;	line-height: 2em;font-size: 1em;clear: both;width: 100%;}
+#BodyFooter_rwd #footer_address{margin-top: 0%;	float: left;width: 100%;margin-right: auto;text-align: center;margin-left: auto;}
+#BodyFooter_rwd #footer_address a {color: #000;line-height: 2em;}
+#BodyFooter_rwd #footer_address ul{float: left;padding:0;text-align: center;margin-bottom: 1%;width: 100%;clear: both;}
+#BodyFooter_rwd #footer_address ul li{float: left;display: block;width: 100%;line-height: 2em;text-align: center;font-size: .8em;}
+/* Footer end */
+
+/*ask*/
+#askarea{background-color:#2896D0;width: 98%;height: auto;float: left;padding:4% 1% 2% 1%;}
+#askarea .asktitle,#askarea .asktitle p{text-align: center;}
+#askarea .asktitle{font-size: 1.0em;color: #FFF;margin-bottom:5%;}
+#askarea p {margin:0% auto auto 5%;	width: 90%;}
+#formlist{width: 99%;float: left;margin:3% auto auto 0%;padding-right:1%;font-size: 0.8em;color: #FFF;}
+input[name="sContent"]{width:50%;}
+input[type="text"]{	width:99%;}
+SELECT,input{border-radius: 7px;font-size: 1.0em;margin:auto 1% 7% auto;background-color: #FFF;height:30px;}
+SELECT{width:100%;border: #FFF;	padding: 0.5%;}
+input{border: #FFF;padding: 1%;color: #C6C6C6;}
+input[type="submit"],input[type="reset"]{color:#FFF;background-color:#eb543f;-webkit-appearance:none;/*ios系統專用，默認的系統樣式*/font-size:1em;margin-top:5%;padding:1%;height:auto}
+input[type="radio"]{width:1em;height:1em;margin-left: 3%;}
+/*ask END*/
+
+/*TOP按鈕*/
+#topli,#topli a{color: #fff;text-decoration: none;}
+#topli{
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 9999em;
+	background-color: #000;
+	opacity: 0.4;
+	position: fixed;
+	line-height: 50px;
+	font-size: 15px;
+	z-index: 99;
+}
+@media screen and  (orientation:portrait) {#topli{right:1%;bottom:8%;}}
+@media screen and  (orientation:landscape){#topli{right:1%;bottom:15.8%;}}
+}
