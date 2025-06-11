@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/styles2.css">
+
+        <link rel="stylesheet" href="assets/css/lightbox.min.css">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <title>Portfolio website complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Luluben</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <!-- 🔽 下拉選單 -->
+                        <li class="nav__item nav__dropdown">
+                            <a href="#work" class="nav__link">Work ▾</a>
+                            <ul class="dropdown__menu">
+                                <li><a href="#work" class="dropdown__link">Work 1</a></li>
+                                <li><a href="#work2" class="dropdown__link">Work 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__buttons">
+                    <!-- Theme change button -->
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                    <!-- Toggle button -->
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-4-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid bg1" id="home" data-trigger>
+                <div class="bg-slider">
+                    <div class="bg-slide" style="background-image: url('./assets/img/bg1.png')"></div>
+                    <div class="bg-slide" style="background-image: url('./assets/img/bg2.png')"></div>
+                    <div class="bg-slide" style="background-image: url('./assets/img/bg3.png')"></div>
+                    <!-- ...可再加 -->
+                </div>
+
+                <div class="home__content">
+                    <div class="home__container">
+                        <div class="home__data">
+                            <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Luluben</span><br> Web Designer</h1>
+        
+                            <a href="#" class="button">Contact</a>
+                        </div>
+        
+                        <div class="home__social">
+                            <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                            <a href="" class="home__social-icon"><i class='bx bxl-behance' ></i></a>
+                            <a href="" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                        </div>
+                    </div>
+    
+                    <div class="home__img">
+                        
+                        <div class="card">
+                            <div class="cover">
+                                <!-- <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <mask id="mask0" mask-type="alpha">
+                                        <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                                    </mask>
+                                    <g mask="url(#mask0)">
+                                        <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                                        <image class="home__blob-img" x="-80" y="-60" href="assets/img/IMG_0595.jpg"/>
+                                    </g>
+                                </svg> -->
+                                <img src="./assets/img/IMG_0595.jpg" alt="">
+                            </div>
+                            <div class="details">
+                                <div>                                
+                                    <h3>Web | UI | develop</h3>
+                                    <h2></h2>
+                                    <a href="#work">Portfolio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-down-indicator">
+                    <a href="#about"><span class="arrow"><i class="ri-arrow-down-wide-fill"></i></span></a>
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section" id="about" data-trigger>
+                <h2 class="section-title" data-animate-group="fadeUp">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img" data-animate-group="slideLeft">
+                        <img src="assets/img/IMG_0595.jpg" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle"  data-animate-group="slideRight">Luluben │ 郭子維</h2>
+                        <h3 data-animate-group="slideRight">Web designer</h3>
+                        <p class="about__text" data-animate-group="slideRight">從原本的flash動畫師(多媒體互動介面設計遊戲介面設計)到網頁設計，網頁轉型rwd互動網頁撰寫，
+                        到能夠獨立作業，學習css HTML5 code 簡易的javascript，最近開始著手UI 的自我訓練(XD FIGMA實作訓練)，試著去適應市場的脈動以及趨勢，
+                        也demo很多層面不同行業的網頁試做，試圖改變現況工作帶來的侷限以及自我能力的強化。</p>     
+                    </div>                                   
+                </div>
+                <button class="about__more bd-grid" id="openAboutModal">View More About</button>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills" data-trigger>
+                <h2 class="section-title" data-animate-group="fadeUp">Skills</h2>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle" data-animate-group="slideLeft">Profesional Skills</h2>
+                        <p class="skills__text" data-animate-group="slideLeft">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
+                        <div class="skills__data" data-animate-group="slideLeft">
+                            <div class="skills__names">
+                                <i class='bx bxl-html5 skills__icon'></i>
+                                <span class="skills__name">HTML5</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+                            </div>
+                            <div>
+                                <span class="skills__percentage" data-percentage="95">0%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data" data-animate-group="slideLeft">
+                            <div class="skills__names">
+                                <i class='bx bxl-css3 skills__icon'></i>
+                                <span class="skills__name">CSS3</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage" data-percentage="95">0%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data" data-animate-group="slideLeft">
+                            <div class="skills__names">
+                                <i class='bx bxl-javascript skills__icon' ></i>
+                                <span class="skills__name">JAVASCRIPT</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage" data-percentage="65">0%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data" data-animate-group="slideLeft">
+                            <div class="skills__names">
+                                <i class='bx bxs-paint skills__icon'></i>
+                                <span class="skills__name">UX/UI</span>
+                            </div>
+                            <div class="skills__bar skills__ux">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage" data-percentage="80">0%</span>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <div class="skills__blocks" id="skills-blocks" data-animate-single2 data-animate-group="slideRight">              
+                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
+                    </div>
+                </div>
+            </section>
+            
+            <!--==================== FEATURED ====================-->
+            <section class="featured section" id="work" data-trigger>
+                <h2 class="section-title" data-animate-group="fadeUp">Work</h2>
+                <div id="group1" class="featured__container container group1">
+                    <ul class="featured__filters">
+                        <li><button type="button" class="featured__item active-featured" data-filter=".g1-all" data-animate-group><span>GET</span></button></li>
+                        <li><button type="button" class="featured__item" data-filter=".posner" data-animate-group><span>波斯納</span></button></li>
+                        <li><button type="button" class="featured__item" data-filter=".master" data-animate-group><span>研究所</span></button></li>
+                        <li><button type="button" class="featured__item" data-filter=".lawyer" data-animate-group><span>法律</span></button></li>
+                        <li><button type="button" class="featured__item" data-filter=".ecibrain" data-animate-group><span>知識達數位</span></button></li>
+                        <li><button type="button" class="featured__item" data-filter=".get" data-animate-group><span>高點教育出版</span></button></li>
+                        <li><button type="button" class="featured__item" data-filter=".cpa" data-animate-group><span>高點會計網</span></button></li>
+                    </ul>                    
+                    
+                    <div class="featured__content grid group1">                        
+
+                        <article class="featured__card mix master g1-all" data-animate-group>
+                                <h1 class="featured__title">上榜黃金兩個月</h1>
+                                <a href="./assets/img/work1_galleryimg_big.png" data-lightbox="mygallery" data-title='上榜黃金兩個月'>
+                                    <div class="gallery-item">
+                                        <img class="gallery-image" src="./assets/img/work1_galleryimg.png" alt="上榜黃金兩個月" title="上榜黃金兩個月">
+                                    </div>
+                                </a>    
+                                <p><a href="works/work1.html" data-panel>view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix get g1-all" data-animate-group>
+                            <h1 class="featured__title">審計公報月</h1>
+                            <a href="./assets/img/work2_galleryimg_big.png" data-lightbox="mygallery" data-title='審計公報月'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work2_galleryimg.png" alt="審計公報"></div>
+                            </a>
+                            <p><a href="works/work2.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+                                
+                        <article class="featured__card mix ecibrain g1-all" data-animate-group>
+                            <h1 class="featured__title">L校園版優惠活動</h1>
+                            <a href="./assets/img/work3_galleryimg_big.png" data-lightbox="mygallery" data-title='L校園版優惠活動'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work3_galleryimg.png" alt="L校園版優惠活動"></div>
+                            </a>
+                            <p><a href="works/work3.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>                         
+
+                        <article class="featured__card mix get g1-all" data-animate-group>
+                            <h1 class="featured__title">全民振興與你相挺</h1>
+                            <a href="./assets/img/work4_galleryimg_big.png" data-lightbox="mygallery" data-title='全民振興與你相挺'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work4_galleryimg.png" alt="全民振興與你相挺"></div>
+                            </a>
+                            <p><a href="works/work4.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix ecibrain g1-all" data-animate-group>
+                            <h1 class="featured__title">跨界方案「會計+法」</h1>
+                            <a href="./assets/img/work5_galleryimg_big.png" data-lightbox="mygallery" data-title='跨界方案「會計+法」'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work5_galleryimg.png" alt="跨界方案「會計+法」"></div>
+                            </a>
+                            <p><a href="works/work5.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+                        
+                        <article class="featured__card mix master g1-all" data-animate-group>
+                            <h1 class="featured__title">考研，為人生再拚一次</h1>
+                            <a href="./assets/img/work6_galleryimg_big.png" data-lightbox="mygallery" data-title='考研，為人生再拚一次'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work6_galleryimg.png" alt="考研，為人生再拚一次"></div>
+                            </a>
+                            <p><a href="works/work6.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix master g1-all" data-animate-group>
+                            <h1 class="featured__title">2026高點好試攻略</h1>
+                            <a href="./assets/img/work7_galleryimg_big.png" data-lightbox="mygallery" data-title='2026高點好試攻略'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work7_galleryimg.png" alt="2026高點好試攻略"></div>
+                            </a>
+                            <p><a href="works/work7.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>                        
+
+                        <article class="featured__card mix master g1-all" data-animate-group>
+                            <h1 class="featured__title">從會研所出發</h1>
+                            <a href="./assets/img/work8_galleryimg_big.png" data-lightbox="mygallery" data-title='從會研所出發'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work8_galleryimg.png" alt="從會研所出發"></div>
+                            </a>
+                            <p><a href="works/work8.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix lawyer g1-all" data-animate-group>
+                            <h1 class="featured__title">新版L總複習網頁廣告</h1>
+                            <a href="./assets/img/work9_galleryimg_big.png" data-lightbox="mygallery" data-title='新版L總複習網頁廣告'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work9_galleryimg.png" alt="新版L總複習網頁廣告"></div>
+                            </a>
+                            <p><a href="works/work9.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix cpa g1-all" data-animate-group>
+                            <h1 class="featured__title">中會IFRS16新租賃準則上路</h1>
+                            <a href="./assets/img/work10_galleryimg_big.png" data-lightbox="mygallery" data-title='中會IFRS16新租賃準則上路'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work10_galleryimg.png" alt="中會IFRS16新租賃準則上路"></div>
+                            </a>
+                            <p><a href="works/work10.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+                        
+                        <article class="featured__card mix posner g1-all" data-animate-group>
+                            <h1 class="featured__title">波斯納學霸,高分闖關國考</h1>
+                            <a href="./assets/img/work11_galleryimg_big.png" data-lightbox="mygallery" data-title='波斯納學霸傾囊相授,高分闖關國考'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work11_galleryimg.png" alt="波斯納學霸傾囊相授,高分闖關國考"></div>
+                            </a>
+                            <p><a href="works/work11.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix lawyer g1-all" data-animate-group>
+                            <h1 class="featured__title">高點律師司法官班,在校生團報!</h1>
+                            <a href="./assets/img/work12_galleryimg_big.png" data-lightbox="mygallery" data-title='高點律師司法官班,在校生團報!'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work12_galleryimg.png" alt="高點律師司法官班,在校生團報"></div>
+                            </a>
+                            <p><a href="works/work12.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix lawyer g1-all" data-animate-group>
+                            <h1 class="featured__title">地方特考總複習班</h1>
+                            <a href="./assets/img/work13_galleryimg_big.png" data-lightbox="mygallery" data-title='<a href="works/work13.html" style="color: #fff;">地方特考總複習班 ➜</a>'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work13_galleryimg.png" alt="地方特考總複習班"></div>
+                            </a>
+                            <p><a href="works/work13.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix lawyer g1-all" data-animate-group>
+                            <h1 class="featured__title">高點知識達.研究所雲端課程</h1>
+                            <a href="./assets/img/work14_galleryimg_big.png" data-lightbox="mygallery" data-title='<a href="works/work14.html" style="color: #fff;">高點知識達.研究所雲端課程 ➜</a>'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work14_galleryimg.png" alt="高點知識達.研究所雲端課程"></div>
+                            </a>
+                            <p><a href="works/work14.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix ecibrain g1-all" data-animate-group>
+                            <h1 class="featured__title">好課,好書新春賀歲!</h1>
+                            <a href="./assets/img/work15_galleryimg_big.png" data-lightbox="mygallery" data-title='<a href="works/work15.html" style="color: #fff;">好課,好書新春賀歲! ➜</a>'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work15_galleryimg.png" alt="好課,好書新春賀歲"></div>
+                            </a>
+                            <p><a href="works/work15.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+
+                        <article class="featured__card mix get g1-all" data-animate-group>
+                            <h1 class="featured__title">高點中秋團報衝百人團! </h1>
+                            <a href="./assets/img/work16_galleryimg_big.png" data-lightbox="mygallery" data-title='<a href="works/work16.html" style="color: #fff;">高點中秋團報,衝百人團!  ➜</a>'>
+                                <div class="gallery-item"><img class="gallery-image" src="./assets/img/work16_galleryimg.png" alt="高點中秋團報,衝百人團! "></div>
+                            </a>
+                            <p><a href="works/work16.html">view more <i class='bx bx-right-arrow-alt'></i></a></p>
+                        </article>
+                    </div>                       
+                </div>                
+            </section> 
+            
+            <section class="featured section section2" id="work2" data-trigger>
+                <h2 class="section-title" data-animate-group="fadeUp">Work 2</h2>
+                <div id="group2" class="featured__container2 container group2">
+
+                    <!-- 四方格入口區 -->
+                    <div class="grid-entry">
+                        <div class="entry-card" data-target="ui" data-animate-group="slideLeft">
+                            <span class="entry-title">UI</span>
+                            <i class="entry-icon bx bx-layout"></i>
+                        </div>
+                        <div class="entry-card" data-target="illustration" data-animate-group="slideLeft">
+                            <span class="entry-title">插畫</span>
+                            <i class="entry-icon bx bx-brush"></i>
+                        </div>
+                        <div class="entry-card" data-target="graphic" data-animate-group="slideLeft">
+                            <span class="entry-title">平面</span>
+                            <i class="entry-icon bx bx-image"></i>
+                        </div>
+                        <div class="entry-card" data-target="comingsoon" data-animate-group="slideLeft">
+                            <span class="entry-title">Coming Soon</span>
+                            <i class="entry-icon bx bx-dots-horizontal-rounded"></i>
+                        </div>
+                    </div>
+
+                    <!-- IFRAME 區塊 -->
+                    <div class="iframe-overlay hidden" id="iframeOverlay">
+                        <div class="iframe-wrapper" data-animate-group="fadeDown">
+                            <div class="iframe-tabs">
+                                <button class="iframe-tab" data-tab="ui">UI</button>
+                                <button class="iframe-tab" data-tab="illustration">插畫</button>
+                                <button class="iframe-tab" data-tab="graphic">平面</button>
+                                <button class="iframe-close" id="iframeClose">×</button>
+                            </div>
+                            <iframe class="iframe-content" id="iframeContent" src="" frameborder="0"></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </section>       
+            
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact" data-trigger>
+                <h2 class="section-title" data-animate-group="fadeUp">Contact</h2>
+
+                <div class="contact__container bd-grid bd-grid2">
+                    <div class="contact__content" data-animate-group="slideLeft">
+                        <h3 class="contact__title">
+                            <i class="ri-chat-3-line"></i> Talk to me
+                        </h3>
+
+                        <div class="contact__info">
+                            <div class="contact__data">
+                                <span class="contact__data-title">Email</span>
+                                <span class="contact__data-info"><a href="mailto:crusanders101@gmail.com">crusanders101@gmail.com</a></span>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="contact__content" data-animate-group="slideLeft">
+                        <h3 class="contact__title">
+                            <i class="ri-send-plane-line"></i> Write me your project
+                        </h3>
+
+                        <form action="" class="contact__form" id="contact-form">
+                            <div class="contact__form-div">
+                                <label for="" class="contact__form-tag">Names</label>
+                                <input type="text" name="user_name" required placeholder="Write your names" class="contact__form-input" id="contact-name">
+                            </div>
+                            
+                            <div class="contact__form-div">
+                                <label for="" class="contact__form-tag">Mail</label>
+                                <input type="email" name="user_email" required placeholder="Write your email" class="contact__form-input" id="contact-email">
+                            </div>
+                            
+                            <div class="contact__form-div contact__form-area">
+                                <label class="contact__form-tag">Project</label>
+                                <textarea name="user_project" placeholder="Write your project" id="contact-project" class="contact__form-input"></textarea>
+                            </div>
+
+                            <p class="contact__message" id="contact-message"></p>
+
+                            <button type="submit" class="contact__button">
+                                Submit <i class="ri-arrow-right-up-line"></i>
+                            </button>
+                        </form>
+                    </div>                    
+                </div>
+            </section> 
+        </main>
+            
+
+        <!--===== FOOTER =====-->
+        <footer class="footer" data-trigger>
+            <p class="footer__title" data-animate-group="fadeUp">Luluben</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p class="footer__copy">&#169; All rigths reserved</p>
+        </footer>
+
+        <!-- ===== 中央彈窗 MODAL ===== -->
+        <div id="aboutModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" id="closeAboutModal">&times;</span>
+                <iframe id="aboutIframe" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div id="aboutOverlay" class="about-overlay"></div>
+
+        <!-- ===== 側邊滑出 PANEL ===== -->
+        <div id="sidePanel" class="side-panel">
+            <div class="side-header">
+                <span class="side-close" id="closeSidePanel">&times;</span>
+            </div>
+            <iframe id="sideIframe" src="" frameborder="0"></iframe>
+        </div>
+        <div id="sideOverlay" class="side-overlay"></div>
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-line"></i>
+        </a> 
+
+        <!--=============== SCROLL REVEAL ===============-->
+        <script src="./assets/js/scrollreveal.min.js"></script>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!--=============== MIXITUP ===============-->
+        <script src="assets/js/mixitup.min.js"></script>
+
+        
+        <!--===== lightbox JS =====-->
+        <script type="text/javascript" src="./assets/js/lightbox-plus-jquery.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="./assets/js/main2.js"></script>
+        <script src="./assets/js/main.fixed.js"></script>
+
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <!-- ScrollTrigger -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+        </script>
+
+        <!--=============== EMAIL JS ===============-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+        <!-- =============== REMOVE BACK JS =============== -->
+        <script src="./assets/js/remove-back.js"></script>
+
+        <script>
+            lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+            })
+        </script>
+
+        <script>
+            window.addEventListener("load", function () {
+                gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+                // ✅ 移除 scrollTo hash 跳轉，改為安全觸發 tab click
+                const hash = window.location.hash.replace('#', '');
+                if (hash) {
+                    waitForFrames(2, () => {
+                        const tabButton = document.querySelector(`[data-filter="\${hash}"]`);
+                        if (tabButton) tabButton.click();
+                    });
+                }
+
+                function waitForFrames(frames, callback) {
+                    if (frames <= 0) {
+                        callback();
+                    } else {
+                        requestAnimationFrame(() => waitForFrames(frames - 1, callback));
+                    }
+                }
+            });
+
+            // GSAP featured__card 動畫邏輯
+            window.addEventListener("load", function () {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const cards = document.querySelectorAll(".featured__card");
+            const container = document.getElementById("work");
+            const containerRect = container.getBoundingClientRect();
+            const centerX = containerRect.left + containerRect.width / 2;
+            const centerY = containerRect.top + containerRect.height / 2;
+
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardX = rect.left + rect.width / 2;
+                const cardY = rect.top + rect.height / 2;
+
+                const offsetX = (cardX - centerX) * 0.5;
+                const offsetY = (cardY - centerY) * 0.5;
+
+                gsap.fromTo(card,
+                    {
+                        opacity: 0,
+                        scale: 0.5,
+                        x: offsetX,
+                        y: offsetY,
+                    },
+                    {
+                        opacity: 1,
+                        scale: 1,
+                        x: 0,
+                        y: 0,
+                        duration: 1.2,
+                        ease: "back.out(1.7)",
+                        scrollTrigger: {
+                            trigger: card,
+                            start: "top 90%",
+                            toggleActions: "play none none none",
+                        }
+                    }
+                );
+            });
+        });
+        </script>
+
+        <!-- =============== MODAL =============== -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            // ===== Modal 彈窗控制 =====
+            const openAboutBtn = document.getElementById("openAboutModal");
+            const closeAboutBtn = document.getElementById("closeAboutModal");
+            const aboutModal = document.getElementById("aboutModal");
+            const aboutOverlay = document.getElementById("aboutOverlay");
+            const aboutIframe = document.getElementById("aboutIframe");
+
+            function openAboutModal() {
+                aboutIframe.src = "horizontal-experience.html";
+                aboutModal.classList.add("show");
+                aboutOverlay.classList.add("show");
+                document.body.classList.add("modal-open"); // ❗加上凍結 class
+                // 先關閉 iframe 互動
+                aboutIframe.classList.add("delayed-interaction");
+
+                // 1.5 秒後才開啟互動（你可以調整時間）
+                setTimeout(() => {
+                    aboutIframe.classList.remove("delayed-interaction");
+                }, 1500);
+            }
+
+            function closeModal() {
+                aboutModal.classList.remove("show");
+                aboutOverlay.classList.remove("show");
+                aboutIframe.src = "";
+                document.body.classList.remove("modal-open"); // ❗解除凍結
+                modalOpened = false;
+            }
+
+            openAboutBtn.addEventListener("click", openAboutModal);
+            closeAboutBtn.addEventListener("click", closeModal);
+            aboutOverlay.addEventListener("click", closeModal);
+
+            // === Intersection Observer: 自動開啟彈窗 ===
+            const aboutSection = document.getElementById("openAboutModal");
+            let modalOpened = true;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (
+                    entry.isIntersecting &&
+                    !modalOpened &&
+                    window.innerWidth > 768 // 👉 僅桌機觸發
+                ) {
+                    openAboutModal();
+                    modalOpened = true;
+                }
+                });
+            }, {
+                threshold: 0.5 // 滑到一半才觸發
+            });
+
+            // if (aboutSection) {
+            //     observer.observe(aboutSection);
+            // }
+
+            // ===== Side Panel 控制 =====
+            const sidePanel = document.getElementById("sidePanel");
+            const sideIframe = document.getElementById("sideIframe");
+            const closeSideBtn = document.getElementById("closeSidePanel");
+            const sideOverlay = document.getElementById("sideOverlay");
+
+            function openPanel(url) {
+                sideIframe.src = url;
+                sidePanel.classList.add("open");
+                sideOverlay.classList.add("show");
+                document.body.classList.add("no-scroll"); // 👉 加上這行，鎖住主頁互動
+            }
+
+            function closePanel() {
+                sidePanel.classList.remove("open");
+                sideOverlay.classList.remove("show");
+                sideIframe.src = "";
+                document.body.classList.remove("no-scroll"); // 👉 移除，恢復主頁互動
+            }
+
+            closeSideBtn.addEventListener("click", closePanel);
+            sideOverlay.addEventListener("click", closePanel);
+
+            document.addEventListener("click", (e) => {
+                const link = e.target.closest(".featured__card p a, .featured__card a");
+                if (link) {
+                e.preventDefault();
+                const url = link.getAttribute("href");
+                if (sidePanel.classList.contains("open") && sideIframe.src.includes(url)) {
+                    closePanel();
+                } else {
+                    openPanel(url);
+                }
+                } else if (!sidePanel.contains(e.target) && sidePanel.classList.contains("open")) {
+                closePanel();
+                }
+            });
+
+            // Esc 鍵關閉所有視窗
+            window.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                closeModal();
+                closePanel();
+                }
+            });
+            });
+        </script>
+        <script>
+            const animations = {
+                slideLeft: {
+                origin: 'left',
+                distance: '50px',
+                duration: 800,
+                opacity: 0,
+                easing: 'ease-in-out',
+                reset: true,
+                },
+                slideRight: {
+                origin: 'right',
+                distance: '50px',
+                duration: 800,
+                opacity: 0,
+                easing: 'ease-in-out',
+                reset: true,
+                },
+                fadeUp: {
+                origin: 'bottom',
+                distance: '30px',
+                duration: 800,
+                opacity: 0,
+                easing: 'ease-in-out',
+                reset: true,
+                },
+                fadeDown: {
+                origin: 'top',
+                distance: '30px',
+                duration: 800,
+                opacity: 0,
+                easing: 'ease-in-out',
+                reset: true,
+                }
+            };
+
+            // 自動綁定每種 data-animate-group
+            Object.keys(animations).forEach(key => {
+                ScrollReveal().reveal(`[data-animate-group="${key}"]`, animations[key]);
+            });
+        </script>
+
+    </body>
+</html>
