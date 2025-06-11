@@ -1,0 +1,222 @@
+<!-- works/work-illustration.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插畫作品</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles2.css">
+    <!-- =====BOX ICONS===== -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+    <style>
+        .responsive-video {
+            width: 100%;
+            height: auto;
+            max-width: 1024px; /* 限制最大寬 */
+            border-radius: 8px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="iframe-content-section">
+    <h1 class="section-title" data-animate-group="fadeDown">角色插畫風格集</h1>
+    <div class="iframe-gallery" data-animate-group="slideLeft">
+        <img src="../assets/img/fake2.png" alt="插畫示意圖" class="gallery-image">
+        <p>描繪人物情緒與造型的插畫練習，用於品牌形象設計或數位媒體。</p>
+        <video src="../assets/mv/星爺電影館1.mp4" controls class="responsive-video" autoplay muted playsinline></video>
+    </div>
+    </section>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!--===== SCROLL REVEAL ANIMATIONS =====-->
+    <script src="../assets/js/scrollreveal-animations.js"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="../assets/js/main.fixed.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            window.addEventListener("scroll", () => {
+                const scrollUp = document.getElementById("scroll-up");
+                if (window.scrollY >= 200) {
+                    scrollUp.classList.add("show-scroll");
+                } else {
+                    scrollUp.classList.remove("show-scroll");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            const groups = {};
+            document.querySelectorAll('[data-animate-group]').forEach(el => {
+                const groupName = el.dataset.animateGroup;
+                if (!groups[groupName]) groups[groupName] = [];
+                groups[groupName].push(el);
+            });
+
+            Object.entries(groups).forEach(([groupName, elements]) => {
+                const triggerEl = elements[0].closest('[data-trigger]') || elements[0];
+
+                let fromVars = { opacity: 0 };
+                let toVars = {
+                    opacity: 1,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    ease: 'power3.out',
+                    paused: true
+                };
+                let leaveVars = {
+                    opacity: 0,
+                    stagger: 0.1,
+                    duration: 0.6,
+                    ease: 'power3.in',
+                    paused: true
+                };
+
+                switch (groupName) {
+                    case 'fadeUp':
+                    fromVars.y = 500;
+                    toVars.y = 0;
+                    leaveVars.y = -500;
+                    break;
+                    case 'fadeDown':
+                    fromVars.y = -500;
+                    toVars.y = 0;
+                    leaveVars.y = 500;
+                    break;
+                    case 'slideLeft':
+                    fromVars.x = -500;
+                    toVars.x = 0;
+                    leaveVars.x = 500;
+                    break;
+                    case 'slideRight':
+                    fromVars.x = 500;
+                    toVars.x = 0;
+                    leaveVars.x = -500;
+                    break;
+                    default:
+                    break;
+                }
+
+                const enterAnim = gsap.fromTo(elements, fromVars, toVars);
+                const leaveAnim = gsap.to(elements, leaveVars);
+
+                ScrollTrigger.create({
+                trigger: triggerEl,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                onEnter: () => {
+                leaveAnim.pause();
+                enterAnim.restart();
+                },
+                onLeaveBack: () => {
+                enterAnim.pause();
+                leaveAnim.restart();
+                }
+            });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const contentMap = {
+            a: `<div class="ui-details"><h2>健身訓練應用</h2><p>自主訓練使用者導向設計</p><img src="../assets/img/ui_trainer.png" alt="作品 A" class="ui-main-image"></div>`,
+            b: `<div class="ui-details"><h2>旅遊行程規劃</h2><p>動線優化設計</p><img src="../assets/img/ui_travel.png" alt="作品 B" class="ui-main-image"></div>`,
+            c: `<div class="ui-details"><h2>設計家具</h2><p>家具應用設計</p><img src="../assets/img/ui_furniture.png" alt="作品 C" class="ui-main-image"></div>`,
+            d: `<div class="ui-details"><h2>流行時尚</h2><p>時尚風格展示</p><img src="../assets/img/ui_fashion.png" alt="作品 D" class="ui-main-image"></div>`
+            };
+
+            const container = document.getElementById("content-display");
+            const buttons = document.querySelectorAll(".nav-btn");
+            const floatingNav = document.getElementById("floating-nav");
+            const topNav = document.getElementById("top-nav");
+
+            buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const key = btn.dataset.content;
+                const html = contentMap[key];
+                if (!html) return;
+
+                if (html) {
+                gsap.to(container, {
+                    opacity: 0,
+                    duration: 0.3,
+                    onComplete: () => {
+                    container.innerHTML = html;
+
+                    // ✨ 這裡加上讓 .ui-details 展開
+                    const details = container.querySelector(".ui-details");
+                    if (details) details.classList.add("active");
+
+                    gsap.fromTo(container, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+
+                    const title = document.querySelector("h1.section-title");
+                    gsap.to(window, {
+                        scrollTo: { y: title, offsetY: 20 },
+                        duration: 0.6,
+                        ease: "power2.out"
+                    });
+                    }
+                });
+                }
+
+                document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active-btn"));
+                document.querySelectorAll(`.nav-btn[data-content="${key}"]`).forEach(b => b.classList.add("active-btn"));
+
+                // 顯示浮動按鈕列
+                if (floatingNav) floatingNav.style.display = 'flex';
+                if (topNav) topNav.style.display = 'none';
+            });
+            });
+            // 預設觸發第一個按鈕，並加上 active 樣式
+            const firstTopBtn = topNav.querySelector(".nav-btn");
+            if (firstTopBtn) {
+            firstTopBtn.classList.add("active-btn");
+            firstTopBtn.click();
+
+            // 尋找對應 floating button 並加上 active-btn
+            const key = firstTopBtn.dataset.content;
+            const floatingBtn = floatingNav.querySelector(`.nav-btn[data-content="${key}"]`);
+            if (floatingBtn) floatingBtn.classList.add("active-btn");
+            }
+
+            // scroll-up
+            const scrollUp = document.getElementById("scroll-up");
+            window.addEventListener("scroll", () => {
+            if (window.scrollY >= 200) {
+                scrollUp.classList.add("show-scroll");
+            } else {
+                scrollUp.classList.remove("show-scroll");
+            }
+            });
+
+            scrollUp.addEventListener("click", e => {
+            e.preventDefault();
+            const title = document.querySelector("h1.section-title");
+            if (title) {
+                gsap.to(window, {
+                scrollTo: { y: title, offsetY: 20 },
+                duration: 0.6,
+                ease: "power2.out"
+                });
+            }
+            });
+        });
+    </script>
+</body>
+</html>

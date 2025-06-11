@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/styles2.css">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+  <title>UI 作品展示</title>
+  <style>
+    .ui-nav-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .ui-main-image {
+      width: 100%;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+    }
+    .floating-nav {
+      position: fixed;
+      top: 30%;
+      right: -4.13rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+      z-index: 100;
+      display: none; /* 預設隱藏 */
+    }
+    .nav-btn:hover{
+      right: 3rem;
+    }
+    .nav-btn:hover span{
+      margin:0 -.4rem .35rem 0;
+    }
+    .nav-btn span{font-size: 2rem;margin:0 .2rem .35rem 0;}
+    .nav-btn.active-btn {
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+      animation: pulse-glow 1.2s infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.6); }
+      50% { box-shadow: 0 0 20px rgba(0, 123, 255, 1); }
+    }
+  </style>
+</head>
+<body>
+  <section class="iframe-content-section">
+    <h1 class="section-title">智慧 UI 介面設計</h1>
+
+    <div class="ui-nav-buttons" id="top-nav">
+      <button class="nav-btn" data-content="a">作品 A</button>
+      <button class="nav-btn" data-content="b">作品 B</button>
+      <button class="nav-btn" data-content="c">作品 C</button>
+      <button class="nav-btn" data-content="d">作品 D</button>
+    </div>
+
+    <div class="ui-card" id="content-display"></div>
+
+    <div class="floating-nav" id="floating-nav">
+      <button class="nav-btn" data-content="a"><span>T</span>rainer</button>
+      <button class="nav-btn" data-content="b"><span>T</span>ravel</button>
+      <button class="nav-btn" data-content="c"><span>F</span>urniture</button>
+      <button class="nav-btn" data-content="d"><span>F</span>ashion</button>
+    </div>
+  </section>
+
+  <a href="#" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="../assets/js/main.fixed.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const contentMap = {
+        a: `<div class="ui-details"><h2>健身訓練應用</h2><p>自主訓練使用者導向設計</p><img src="../assets/img/ui_trainer.png" alt="作品 A" class="ui-main-image"></div>`,
+        b: `<div class="ui-details"><h2>旅遊行程規劃</h2><p>動線優化設計</p><img src="../assets/img/ui_travel.png" alt="作品 B" class="ui-main-image"></div>`,
+        c: `<div class="ui-details"><h2>設計家具</h2><p>家具應用設計</p><img src="../assets/img/ui_furniture.png" alt="作品 C" class="ui-main-image"></div>`,
+        d: `<div class="ui-details"><h2>流行時尚</h2><p>時尚風格展示</p><img src="../assets/img/ui_fashion.png" alt="作品 D" class="ui-main-image"></div>`
+      };
+
+      const container = document.getElementById("content-display");
+      const buttons = document.querySelectorAll(".nav-btn");
+      const floatingNav = document.getElementById("floating-nav");
+      const topNav = document.getElementById("top-nav");
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const key = btn.dataset.content;
+          const html = contentMap[key];
+          if (!html) return;
+
+          if (html) {
+            gsap.to(container, {
+              opacity: 0,
+              duration: 0.3,
+              onComplete: () => {
+                container.innerHTML = html;
+
+                // ✨ 這裡加上讓 .ui-details 展開
+                const details = container.querySelector(".ui-details");
+                if (details) details.classList.add("active");
+
+                gsap.fromTo(container, { opacity: 0 }, { opacity: 1, duration: 0.5 });
+
+                const title = document.querySelector("h1.section-title");
+                gsap.to(window, {
+                  scrollTo: { y: title, offsetY: 20 },
+                  duration: 0.6,
+                  ease: "power2.out"
+                });
+              }
+            });
+          }
+
+          document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active-btn"));
+          document.querySelectorAll(`.nav-btn[data-content="${key}"]`).forEach(b => b.classList.add("active-btn"));
+
+          // 顯示浮動按鈕列
+          if (floatingNav) floatingNav.style.display = 'flex';
+          if (topNav) topNav.style.display = 'none';
+        });
+      });
+      // 預設觸發第一個按鈕，並加上 active 樣式
+      const firstTopBtn = topNav.querySelector(".nav-btn");
+      if (firstTopBtn) {
+        firstTopBtn.classList.add("active-btn");
+        firstTopBtn.click();
+
+        // 尋找對應 floating button 並加上 active-btn
+        const key = firstTopBtn.dataset.content;
+        const floatingBtn = floatingNav.querySelector(`.nav-btn[data-content="${key}"]`);
+        if (floatingBtn) floatingBtn.classList.add("active-btn");
+      }
+
+      // scroll-up
+      const scrollUp = document.getElementById("scroll-up");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY >= 200) {
+          scrollUp.classList.add("show-scroll");
+        } else {
+          scrollUp.classList.remove("show-scroll");
+        }
+      });
+
+      scrollUp.addEventListener("click", e => {
+        e.preventDefault();
+        const title = document.querySelector("h1.section-title");
+        if (title) {
+          gsap.to(window, {
+            scrollTo: { y: title, offsetY: 20 },
+            duration: 0.6,
+            ease: "power2.out"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

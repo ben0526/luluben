@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="../assets/css/styles.css">
+        <link rel="stylesheet" href="../assets/css/styles2.css">
+
+        <link rel="stylesheet" href="../assets/css/lightbox.min.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+
+        <title>Portfolio website complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header" id="header1">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Luluben</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="index.html#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="index.html#work" class="nav__link active-link">Work</a></li>
+                        <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="bx bx-menu"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== WORK =====-->
+            <!-- partial:index.partial.html -->
+            <section class="work section" id="work">
+
+                <div class="work__container">
+
+                    <div class="work__project work__grid">
+                        <header class="work__header work__grid"><h1 class="work__title">高點中秋團報,衝百人團</h1></header>
+
+                        <div class="work__wireframe">
+                            <img src="../assets/img/work16_wireframe.png" alt="">
+                        </div>
+
+                        <div class="work__content work__grid">
+                            <div class="work__description">
+                                高點中秋團報,衝百人團                              
+                            </div>
+                            <div class="work__meta">
+                                <span>Date:2024/06/03</span>                             c
+                                <span>Client:高點中秋團報,衝百人團</span>
+                                <span>Role:<span>Web design&amp;illustrator</span></span>
+                                <span><a href="../get/0909015 109高點中秋網路團報/moon_fest_groupclass/default.html" target="_blank">高點中秋團報,衝百人團</a></span>
+                            </div>
+                        </div> 
+
+                        <div class="work__project__img"><img src="../assets/img/work16_big_photo.png" alt=""></div>
+
+                        <div class="work__img3 work__project__img work__project__img__ps"><img src="../assets/img/work16_phone.png" alt=""></div>
+                        <div class="work__img3 work__project__img work__project__img__ps2"><img src="../assets/img/work16_ipad.png" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="work__overview work__grid">
+                    <ul>
+                        <li><a href="work1.html">上榜黃金兩個月</a></li>
+                        <li><a href="work2.html">審計公報</a></li>
+                        <li><a href="work3.html">L校園版優惠活動</a></li>
+                        <li><a href="work4.html">全民振興與你相挺</a></li>
+                        <li><a href="work5.html">跨界方案「會計+法」</a></li>
+                        <li><a href="work6.html">考研，為人生再拚一次</a></li>
+                        <li><a href="work7.html">2026高點好試攻略</a></li>
+                        <li><a href="work8.html">從會研所出發</a></li>
+                        <li><a href="work9.html">新版L總複習網頁廣告</a></li>
+                        <li><a href="work10.html">中會IFRS16新租賃準則上路!</a></li>
+                        <li><a href="work11.html">波斯納學霸傾囊相授,高分闖關國考</a></li>
+                        <li><a href="work12.html">高點律師司法官班,在校生團報!</a></li>
+                        <li><a href="work13.html">地方特考總複習班</a></li>
+                        <li><a href="work14.html">高點知識達.研究所雲端課程</a></li>
+                        <li><a href="work15.html">好課,好書新春賀歲!</a></li>
+                        <li class="active">點中秋團報,衝百人團</li>
+                        <li><a href="work17.html">理工人智取考研</a></li>
+                        <li><a href="work18.html">護理師雲端課程</a></li>
+                    </ul>
+                </div>
+                
+            </section>            
+
+        </main>
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up"><i class="ri-arrow-up-line"></i></a>
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== SCROLL REVEAL ANIMATIONS =====-->
+        <script src="../assets/js/scrollreveal-animations.js"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="../assets/js/main.js"></script>        
+
+        <!--===== lightbox JS =====-->
+        <script type="text/javascript" src="../assets/js/lightbox-plus-jquery.min.js"></script>
+        <script>
+            lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+            })
+        </script>
+        <script src="../assets/js/bottomli_text.js"></script> 
+        <script>
+            if (window.self !== window.top) {
+                // 在 iframe 裡
+                const header = document.querySelector("header");
+                if (header) {
+                    header.style.display = "none";
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                window.addEventListener("scroll", () => {
+                    const scrollUp = document.getElementById("scroll-up");
+                    if (window.scrollY >= 200) {
+                        scrollUp.classList.add("show-scroll");
+                    } else {
+                        scrollUp.classList.remove("show-scroll");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
