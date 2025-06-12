@@ -16,7 +16,7 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 1000,
     delay: 200,
-    reset: true // true = 滾回來會再次播放動畫
+    reset: false // true = 滾回來會再次播放動畫
 });
 
 // 主標題動畫
