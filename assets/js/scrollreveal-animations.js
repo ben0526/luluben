@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
             distance: '60px',
             duration: 1000,
             delay: 200,
-            reset: true,
+            reset: false,
             interval: 80,
             origin: 'bottom'
         });
