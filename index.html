@@ -716,17 +716,6 @@
                 }
             };
 
-            // 自動綁定每種 data-animate-group
-            Object.keys(animations).forEach(key => {
-                ScrollReveal().reveal(`[data-animate-group="${key}"]`, animations[key]);
-            });
-
-            // iframe 自動調整高度
-            const iframe = document.getElementById("iframeContent");
-            iframe.onload = function() {
-                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-            }
-
         </script>
         
 
