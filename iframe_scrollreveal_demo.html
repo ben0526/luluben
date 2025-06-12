@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrollReveal iframe Demo</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    .iframe-wrapper { width: 100%; max-width: 1000px; margin: 0 auto; }
+    iframe {
+      width: 100%;
+      border: none;
+      transition: height 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="iframe-wrapper">
+    <iframe id="iframeContent" src="work1.html"></iframe>
+  </div>
+
+  <script>
+    const iframe = document.getElementById("iframeContent");
+
+    iframe.onload = function() {
+      try {
+        const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+        // 自動調整高度
+        iframe.style.height = innerDoc.body.scrollHeight + 50 + 'px';
+
+        // 確保 ScrollReveal 有初始化（裡面頁面已引入 scrollreveal.min.js）
+        if (iframe.contentWindow.ScrollReveal) {
+          iframe.contentWindow.ScrollReveal().reveal('[data-animate-group]', {
+            distance: '50px',
+            duration: 1000,
+            easing: 'ease-in-out',
+            interval: 100,
+            reset: true
+          });
+        }
+      } catch (e) {
+        console.warn("無法操作 iframe 的內容，可能是跨網域限制", e);
+      }
+    }
+  </script>
+</body>
+</html>
