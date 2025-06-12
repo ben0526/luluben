@@ -716,8 +716,11 @@
                 }
             };
 
+            // 自動綁定每種 data-animate-group
+            Object.keys(animations).forEach(key => {
+                ScrollReveal().reveal(`[data-animate-group="${key}"]`, animations[key]);
+            });
         </script>
-        
 
     </body>
 </html>
