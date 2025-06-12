@@ -1,16 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    if (typeof ScrollReveal !== "undefined") {
-        ScrollReveal().reveal('.work__grid > *, .work__title, .work__description, .work__meta, .work__wireframe, .work__project__img, .work__img1, .work__overview li', {
-            distance: '60px',
-            duration: 1000,
-            delay: 200,
-            reset: true,
-            interval: 80,
-            origin: 'bottom'
-        });
-    }
-});
-
 // ScrollReveal 設定初始化
 const sr = ScrollReveal({
     distance: '60px',
