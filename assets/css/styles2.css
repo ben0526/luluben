@@ -833,7 +833,7 @@ body.no-scroll * {
 
 @media screen and (max-width:768px){
   .featured__content{
-    grid-template-columns: repeat(2 , 180px);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: .5rem;
   }
 }
