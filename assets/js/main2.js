@@ -409,14 +409,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // 自動綁定每種 data-animate-group
-document.addEventListener("DOMContentLoaded", function () {
-    // 替換 <img> 為 CDN 圖
-    document.querySelectorAll('img[data-cdn]').forEach(img => {
-    img.src = img.dataset.cdn;
-    });
-    // 替換 background-image 為 CDN 圖
-    document.querySelectorAll('[data-cdn-style]').forEach(el => {
-        const bg = el.dataset.cdnStyle;
-        if (bg) el.style.backgroundImage = `url('${bg}')`;
-    });
+window.addEventListener("load", function () {
+  document.querySelectorAll('img[data-cdn]').forEach(img => {
+    if (img.dataset.cdn) img.src = img.dataset.cdn;
+  });
+
+  document.querySelectorAll('[data-cdn-style]').forEach(el => {
+    if (el.dataset.cdnStyle) el.style.backgroundImage = `url('${el.dataset.cdnStyle}')`;
+  });
 });
