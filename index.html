@@ -61,9 +61,9 @@
             <!--===== HOME =====-->
             <section class="home bd-grid bg1" id="home" data-trigger>
                 <div class="bg-slider">
-                    <div class="bg-slide" style="background-image: url('./assets/img/bg1.png')" data-cdn-style="https://ik.imagekit.io/qxj7mflxd/assets/img/bg1.png?tr=w-800,q-70,f-auto"></div>
-                    <div class="bg-slide" style="background-image: url('./assets/img/bg2.png')" data-cdn-style="https://ik.imagekit.io/qxj7mflxd/assets/img/bg2.png?tr=w-800,q-70,f-auto"></div>
-                    <div class="bg-slide" style="background-image: url('./assets/img/bg3.png')" data-cdn-style="https://ik.imagekit.io/qxj7mflxd/assets/img/bg3.png?tr=w-800,q-70,f-auto"></div>
+                    <div class="bg-slide" style="background-image: url('./assets/img/bg1.png')" data-cdn-style="https://ik.imagekit.io/qxj7mflxd/assets/img/bg1.png?tr=w-1920,q-100,f-auto"></div>
+                    <div class="bg-slide" style="background-image: url('./assets/img/bg2.png')" data-cdn-style="https://ik.imagekit.io/qxj7mflxd/assets/img/bg2.png?tr=w-1920,q-100,f-auto"></div>
+                    <div class="bg-slide" style="background-image: url('./assets/img/bg3.png')" data-cdn-style="https://ik.imagekit.io/qxj7mflxd/assets/img/bg3.png?tr=w-1920,q-100,f-auto"></div>
                     <!-- ...可再加 -->
                 </div>
 
@@ -716,17 +716,18 @@
                 reset: true,
                 }
             };
-        </script>
-        <script>
+
+            // 自動綁定每種 data-animate-group
             window.addEventListener("load", function () {
-              document.querySelectorAll('img[data-cdn]').forEach(img => {
-                if (img.dataset.cdn) img.src = img.dataset.cdn;
-              });
-            
-              document.querySelectorAll('[data-cdn-style]').forEach(el => {
-                if (el.dataset.cdnStyle) el.style.backgroundImage = `url('${el.dataset.cdnStyle}')`;
-              });
+                document.querySelectorAll('img[data-cdn]').forEach(img => {
+                    if (img.dataset.cdn) img.src = img.dataset.cdn;
+                });
+
+                document.querySelectorAll('[data-cdn-style]').forEach(el => {
+                    if (el.dataset.cdnStyle) el.style.backgroundImage = `url('${el.dataset.cdnStyle}')`;
+                });
             });
         </script>
+
     </body>
 </html>
