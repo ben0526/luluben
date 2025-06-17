@@ -717,6 +717,16 @@
                 }
             };
         </script>
-
+        <script>
+            window.addEventListener("load", function () {
+              document.querySelectorAll('img[data-cdn]').forEach(img => {
+                if (img.dataset.cdn) img.src = img.dataset.cdn;
+              });
+            
+              document.querySelectorAll('[data-cdn-style]').forEach(el => {
+                if (el.dataset.cdnStyle) el.style.backgroundImage = `url('${el.dataset.cdnStyle}')`;
+              });
+            });
+        </script>
     </body>
 </html>
