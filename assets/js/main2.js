@@ -416,6 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // 替換 background-image 為 CDN 圖
     document.querySelectorAll('[data-cdn-style]').forEach(el => {
-    el.style.backgroundImage = "url('" + el.dataset.cdnStyle + "')";
+        const bg = el.dataset.cdnStyle;
+        if (bg) el.style.backgroundImage = `url('${bg}')`;
     });
 });
